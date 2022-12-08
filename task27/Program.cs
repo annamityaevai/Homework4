@@ -3,20 +3,11 @@
 
 Console.Write("Insert number: ");
 int n = Convert.ToInt32(Console.ReadLine());
-
-  int SumNumber(int n){
-    
-    int counter = Convert.ToString(n).Length;
-    int advance = 0;
-    int result = 0;
-
-    for (int i = 0; i < counter; i++){
-      advance = n - n % 10;
-      result = result + (n - advance);
-      n = n / 10;
-    }
-   return result;
-  }
-
-int sumNumber = SumNumber(n);
-Console.WriteLine("Sum of digits: " + sumNumber);
+int sum = 0;
+while (n > 0)
+{
+int i = n % 10;
+n = n / 10;
+sum = sum + i;
+}
+Console.WriteLine("Sum of digits: " + sum);
